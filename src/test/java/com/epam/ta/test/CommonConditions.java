@@ -4,6 +4,7 @@ package com.epam.ta.test;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -36,11 +37,18 @@ public class CommonConditions {
 
                    FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.merge(cap);
-                    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444"), cap);
+                } else {
+                    if (browser.equalsIgnoreCase("MicrosoftEdge")) {
+                        cap.setBrowserName("MicrosoftEdge");
+
+                        EdgeOptions edgeOptions = new EdgeOptions();
+                        edgeOptions.merge(cap);
+                        driver = new RemoteWebDriver(new URL("http://localhost:4444"), cap);
                 }
             }
 
-        }
+        } }
 
 
 
