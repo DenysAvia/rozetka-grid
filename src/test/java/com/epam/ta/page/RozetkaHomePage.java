@@ -22,13 +22,17 @@ public class RozetkaHomePage extends AbstractSetup {
 
         driver.get(HOMEPAGE_URL);
         driver.manage().window().maximize();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.visibilityOf(searchInput));
+        new WebDriverWait(driver, Duration.ofSeconds(20))
+                .until(ExpectedConditions.visibilityOf(searchButton));
         return this;
     }
 
     public RozetkaHomePageSearchResults searchResultsTerm (String term) {
         searchInput.sendKeys(term);
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='button button_color_green button_size_medium search-form__submit ng-star-inserted']")));
         searchButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//section[@class='content content_type_catalog']")));

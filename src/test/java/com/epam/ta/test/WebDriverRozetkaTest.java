@@ -18,7 +18,7 @@ public class WebDriverRozetkaTest extends CommonConditions {
 
         int expectedSearchResultNumber =  new RozetkaHomePage(driver)
                 .openPage()
-                .searchResultsTerm("iphone 13 128")
+                .searchResultsTerm("xiaomi redmi note 11")
                 .searchResultsSize();
 
         Assert.assertTrue(expectedSearchResultNumber > 0,"Search results are empty!");
@@ -29,7 +29,7 @@ public class WebDriverRozetkaTest extends CommonConditions {
 
         int expectedAddToCardResultNumber = new RozetkaHomePage(driver)
                 .openPage()
-                .searchResultsTerm("Exide Start-Stop EFB 80")
+                .searchResultsTerm("lenovo legion")
                 .addToCard()
                 .basketOpen()
                 .addToCardResultsSize();

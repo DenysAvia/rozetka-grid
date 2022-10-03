@@ -3,7 +3,7 @@
 
     <suite name="Suite" parallel = "tests" thread-count = "2">
 
-    <test thread-count="3" parallel="methods" name="Test chrome">
+    <test thread-count="3" parallel="tests" name="Test chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="com.epam.ta.test.WebDriverRozetkaTest">
@@ -15,7 +15,7 @@
         </class>
         </classes>
     </test>
-    <test thread-count="3" parallel="methods" name="Test firefox">
+    <test thread-count="3" parallel="tests" name="Test firefox">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="com.epam.ta.test.WebDriverRozetkaTest">

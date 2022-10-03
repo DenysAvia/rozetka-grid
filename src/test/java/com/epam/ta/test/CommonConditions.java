@@ -27,7 +27,7 @@ public class CommonConditions {
 
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.merge(cap);
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444"), cap);
 
             } else {
                 if (browser.equalsIgnoreCase("firefox")) {
