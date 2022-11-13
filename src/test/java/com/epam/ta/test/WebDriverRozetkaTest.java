@@ -3,7 +3,7 @@ package com.epam.ta.test;
 import com.epam.ta.page.RozetkaHomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+//Please use this command for hub and nodes setup docker-compose -f ./src/test/java/com/epam/ta/test/docker-compose-v2.yml up
 public class WebDriverRozetkaTest extends CommonConditions {
     @Test(description = "JIRA-0001")
     public void verifyHomePageTitleTest(){
